@@ -1,0 +1,9 @@
+[workspace]
+resolver = "2"
+members = [ "emu", "emu8088"]
+
+[workspace.lints.clippy]
+all = "warn"
+pedantic = "warn"
+cargo = "warn"
+nursery = "warn"
