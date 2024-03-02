@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = [ "emu", "emu8088"]
+members = [ "emu", "emu8088", "mem"]
 
 [workspace.lints.clippy]
 all = "warn"

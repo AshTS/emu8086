@@ -1,0 +1,18 @@
+[package]
+name = "mem"
+version = "0.1.0"
+description = "Memory Utilities"
+repository = "https://github.com/AshTS/emu8088pc"
+readme = "README.md"
+license = "MIT"
+keywords = ["8088", "8086"]
+categories = ["emulator"]
+edition = "2021"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[lints]
+workspace = true

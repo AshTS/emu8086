@@ -17,4 +17,4 @@ As of writing, the order of operations is as follows:
 
 ## Getting Started
 
-First, we will be setting up our development environment. Everything will be created as a workspace, and will contain many libraries and one executable. We will start with just the `emu8088` executable crate.
+First, we will be setting up our development environment. Everything will be created as a workspace, and will contain many libraries and one executable. We will start with the `emu` executable crate, which will eventually give a CLI to the PC emulator. For now, we will leave this as just the default "Hello World" program. We will also want to create an `emu8088` library crate to contain the 8088 emulator code. Within this library, we create two modules, one for the BIU (Bus Interface Unit), and one for the EU (Execution Unit).
