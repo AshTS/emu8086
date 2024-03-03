@@ -1,7 +1,8 @@
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub enum BusDeviceError {
     AddressOutOfBounds{address: usize, size: usize},
-    AddressNotWritable{address: usize}
+    AddressNotWritable{address: usize},
+    AddressNotMapped{address: usize}
 }
 
 pub trait BusDevice {
@@ -19,7 +20,9 @@ pub trait BusDevice {
     ///
     /// This function will return an error if the byte cannot be written.
     fn write(&mut self, address: usize, data: u8) -> Result<(), BusDeviceError>;
+}
 
+pub trait RegionBusDevice : BusDevice {
     /// Reads a region of memory with the given starting `address`.
     ///
     /// # Errors
@@ -48,6 +51,8 @@ pub trait BusDevice {
         Ok(())
     }
 }
+
+impl<T: BusDevice> RegionBusDevice for T {}
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Memory<const SIZE: usize> ([u8; SIZE]);
